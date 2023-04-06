@@ -1,0 +1,22 @@
+services:
+
+  baneco-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: webmasteregx/prod-api-auth:03022023123051
+    #image: webmasteregx/prod-api-auth:03022023123051
+    container_name: app-auth
+    restart: always
+    ports:
+      - 4500:4100
+    environment:
+      EGX_URL: 'https://baneco-store-development.myshopify.com/admin/api/2022-07'
+      EGX_TOKEN: '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'
+      POSTGRES_HOST: 'babar.db.elephantsql.com'
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: 'wxizeqzm'
+      POSTGRES_PASSWORD: 'gi8dV7yUOJgqExWynVFtMfuCWUa5aHhi'
+      POSTGRES_DATABASE: wxizeqzm
+      BANECO_URL: 'http://10.1.43.53'
+      PORT: 4100
